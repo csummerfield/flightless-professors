@@ -1,157 +1,277 @@
-/*
-Theme Name: Gateway
-*/
-
-/* Main Body */
-body {
-    background-color: #ffffff;
-    color: #333333;
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
+/* Reset and base styles */
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "DejaVu Sans", Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+}
+
+/* Header */
+.header {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.header h1 {
+    font-size: 3rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+/* Navigation */
+.nav {
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    padding: 1rem 0;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.nav a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin-bottom: 100px;
+}
+
+/* Sections */
+.section {
+    padding: 3rem;
+    border-bottom: 1px solid #eee;
+}
+
+.section:last-child {
+    border-bottom: none;
+}
+
+.section h2 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 2rem;
+    font-weight: 300;
+}
+
+.subtitle {
+    font-size: 1.3rem;
+    color: #7f8c8d;
+    font-weight: 300;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+/* About section */
+.about-content {
+    display: flex;
+    gap: 3rem;
+    align-items: flex-start;
+}
+
+.profile-image {
+    width: 300px;
+    height: 300px;
+    border-radius: 15px;
+    object-fit: cover;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    flex-shrink: 0;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-text p {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+/* Books section */
+.book {
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background: #f8f9fa;
+    border-radius: 15px;
+    border-left: 5px solid #667eea;
+    display: flex; /* Use flexbox for layout */
+    align-items: flex-start; /* Align items to the top */
+    gap: 20px; /* Space between image and text */
+}
+
+.book-content {
+    flex: 1; /* Allow content to take remaining space */
+}
+
+.book-cover {
+    max-width: 150px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0; /* Prevent image from shrinking */
+}
+
+.book h3 {
+    font-size: 1.8rem;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+.book h4 {
+    font-size: 1.3rem;
+    color: #7f8c8d;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+}
+
+.publisher {
+    font-weight: 600;
+    color: #667eea;
+    margin-bottom: 1rem;
+}
+
+.testimonials {
+    margin-top: 2rem;
+}
+
+.testimonial {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    border-left: 4px solid #667eea;
+    font-style: italic;
+}
+
+/* Research section */
+.research-section {
+    margin-bottom: 2.5rem;
+    padding: 2rem;
+    background: #f8f9fa;
+    border-radius: 15px;
+}
+
+.research-section h3 {
+    font-size: 1.6rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
 }
 
 /* Links */
 a {
-    color: #0073aa;
+    color: #667eea;
     text-decoration: none;
+    transition: color 0.3s ease;
 }
 
-a:hover,
-a:focus,
-a:active {
-    color: #00a0d2;
-}
-
-/* Header */
-.site-header {
-    background-color: #333333;
-    padding: 20px 0;
-}
-
-.header-image-container {
-    width: 100%;
-    overflow: hidden;
-    margin-bottom: 20px;
-}
-
-.header-image {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-.site-branding {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.site-title {
-    font-size: 2.5em; /* Adjusted font size */
-    margin: 0;
-}
-
-.site-title a {
-    color: #ffffff;
-    text-decoration: none;
-}
-
-.site-description {
-    color: #999999;
-}
-
-/* Navigation */
-.main-navigation {
-    background-color: #f8f8f8;
-    border-bottom: 1px solid #eee;
-    padding: 10px 0;
-    text-align: center;
-}
-
-.main-navigation ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex; /* Use flexbox for horizontal layout */
-    justify-content: center; /* Center the navigation items */
-}
-
-.main-navigation li {
-    margin: 0 15px;
-}
-
-.main-navigation a {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-    padding: 5px 10px;
-    display: block;
-}
-
-.main-navigation a:hover {
-    color: #0073aa;
-}
-
-/* Content */
-.content-area {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-.entry-header {
-    margin-bottom: 20px;
-}
-
-.entry-title {
-    font-size: 2em;
-    margin-bottom: 10px;
-}
-
-.entry-title a {
-    text-decoration: none;
-}
-
-.entry-meta {
-    font-size: 0.9em;
-    color: #777;
-}
-
-.entry-content p {
-    margin-bottom: 1em;
-    line-height: 1.6;
-}
-
-/* Footer */
-.site-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #333;
-    color: #fff;
-    margin-top: 40px;
-}
-
-.site-footer a {
-    color: #fff;
-    text-decoration: none;
-}
-
-.site-footer a:hover {
+a:hover {
+    color: #764ba2;
     text-decoration: underline;
 }
 
-/* Responsive adjustments */
+/* Footer */
+.footer {
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    backdrop-filter: blur(10px);
+}
+
+/* Responsive design */
 @media (max-width: 768px) {
-    .site-title {
-        font-size: 2em;
+    .header h1 {
+        font-size: 2rem;
     }
-    .main-navigation ul {
-        flex-direction: column; /* Stack navigation items vertically on small screens */
-        align-items: center;
+    
+    .nav a {
+        display: block;
+        margin: 0.5rem 0;
     }
-    .main-navigation li {
-        margin: 5px 0;
+    
+    .container {
+        margin: 1rem;
+        border-radius: 15px;
+    }
+    
+    .section {
+        padding: 2rem 1.5rem;
+    }
+    
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .profile-image {
+        width: 250px;
+        height: 250px;
+        margin: 0 auto 2rem;
+    }
+    
+    .section h2 {
+        font-size: 2rem;
+    }
+
+    .book {
+        flex-direction: column; /* Stack items vertically on small screens */
+        align-items: center; /* Center items */
+        text-align: center;
+    }
+
+    .book-cover {
+        margin-bottom: 20px; /* Add space below image when stacked */
     }
 }
+
+@media (max-width: 480px) {
+    .header h1 {
+        font-size: 1.5rem;
+    }
+    
+    .section {
+        padding: 1.5rem 1rem;
+    }
+    
+    .profile-image {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .book, .research-section {
+        padding: 1.5rem;
+    }
+}
+
